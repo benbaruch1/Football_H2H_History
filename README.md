@@ -10,6 +10,7 @@ Source of information: [matchstat.com](https://matchstat.com/football/head-to-he
 
 #### Input:
 Please choose 1st team: manchester united
+
 Please choose 2nd team: liverpool
 
 #### Result:
