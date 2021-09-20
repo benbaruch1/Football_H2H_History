@@ -1,8 +1,8 @@
-### A python web-scraping code to get football H2H matches history.
+### A python web-scraping code to get football H2H match history.
 
 Using Selenium and Openpyxl.
 
-Enter 2 teams and get all their matches history between them.
+Enter 2 teams and get all their match history between them.
 
 Source of information: [matchstat.com](https://matchstat.com/football/head-to-head "matchstat.com")
 
