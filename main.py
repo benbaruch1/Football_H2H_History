@@ -1,4 +1,5 @@
 from selenium import webdriver
+from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.keys import Keys
 from openpyxl import Workbook
@@ -6,7 +7,7 @@ import time
 
 path_of_driver = r"C:\python\chromedriver.exe"
 options = Options()
-options.headless = True
+options.headless = False
 driver = webdriver.Chrome(path_of_driver, options=options)
 
 team1 = input("Please choose 1st team: ")
@@ -31,7 +32,13 @@ input_team2.send_keys(Keys.ARROW_DOWN)
 input_team2.send_keys(Keys.RETURN)
 time.sleep(3)
 
-get_table_h2h_row = driver.find_element_by_xpath('//table[@class="table fb-fixture-table"]')
+try:
+    get_table_h2h_row = driver.find_element_by_xpath('//table[@class="table fb-fixture-table"]')
+except NoSuchElementException:
+    print("Input error.")
+    driver.quit()
+    exit()
+
 amount_of_games = len(get_table_h2h_row.text.split('\n'))
 
 if amount_of_games <= 1:
